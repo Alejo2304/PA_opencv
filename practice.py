@@ -14,8 +14,9 @@ plt.plot(x, y), plt.title('Mamaguevazo')
 
 #Trabajar con Imagenes
 img = cv.imread('./img/img1.jpeg')
+img_rgb = img[ : , : , ::-1] 
 plt.subplot(3,1,3)
-plt.imshow(img,'gray'), plt.title('Test 1')
+plt.imshow(img_rgb,'gray'), plt.title('Test 1')
 
 plt.show()
 

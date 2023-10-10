@@ -20,3 +20,4 @@ while(True):
 
 vid.release()
 cv.destroyAllWindows()
+
