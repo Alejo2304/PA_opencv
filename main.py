@@ -2,17 +2,21 @@ import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
 
-x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
-y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+#video capture object
+vid = cv.VideoCapture(0)
 
-#crear graficos con matplotlib
-plt.title("Sports Watch Data"),plt.xlabel("Average Pulse"),plt.ylabel("Calorie Burnage")
-plt.plot(x, y)
-plt.grid()
+while(True):
 
-'''
-#Trabajar con Imagenes
-img = cv.imread('./img/img1.jpeg')
-plt.imshow(img,'gray'), plt.title('Test 1')
-'''
-plt.show()
+    #capture the video frame by frame
+    ret, frame = vid.read()
+    frame = cv.resize(frame, (540, 380), fx = 0, fy = 0, interpolation = cv.INTER_CUBIC)
+    #display the frame
+    #frame_rgb = frame[ : , : , ::-1]
+    
+    cv.imshow('Frame', frame)
+
+    if cv.waitKey(1) & 0xFF == ord('q'):
+        break
+
+vid.release()
+cv.destroyAllWindows()
