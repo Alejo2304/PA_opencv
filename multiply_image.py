@@ -6,10 +6,6 @@ from matplotlib import pyplot as plt
 img1 = cv.imread('./img/img3.jpeg', cv.IMREAD_GRAYSCALE)
 img2 = cv.imread('./img/img5.jpeg', cv.IMREAD_GRAYSCALE)
 
-#convert to RGB
-img1 = img1[ : , : , ::-1]
-img2 = img2[ : , : , ::-1]
-
 #convert img to matrix. 
 img1_matrix = np.array(img1)
 img2_matrix = np.array(img2)

@@ -4,7 +4,6 @@ from matplotlib import pyplot as plt
 
 #load the image
 img1 = cv.imread('./img/img3.jpeg', cv.IMREAD_GRAYSCALE)
-img1 = img1[ : , : , ::-1]
 
 scalar = 0
 

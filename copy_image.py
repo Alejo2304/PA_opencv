@@ -17,5 +17,7 @@ roi_copy = roi.copy()
 img[86:169, 3:92] = roi_copy
 img[87:170, 93:182] = roi_copy
 
+cv.imwrite('img/copy_image.png', img)
+
 plt.subplot(122),plt.title('Modified'),plt.imshow(img, 'gray')
 plt.show()
