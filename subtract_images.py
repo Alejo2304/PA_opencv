@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 #load the image
-img1 = cv.imread('./img/img1.jpeg', cv.IMREAD_GRAYSCALE)
+img1 = cv.imread('./img/img3.jpeg', cv.IMREAD_GRAYSCALE)
 img2 = cv.imread('./img/img5.jpeg', cv.IMREAD_GRAYSCALE) 
 
 #convert img to matrix. 
