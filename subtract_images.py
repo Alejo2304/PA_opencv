@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 #load the image
-img1 = cv.imread('./img/img3.jpeg', cv.IMREAD_GRAYSCALE)
+img1 = cv.imread('./img/img1.jpeg', cv.IMREAD_GRAYSCALE)
 img2 = cv.imread('./img/img5.jpeg', cv.IMREAD_GRAYSCALE) 
 
 #convert to RGB
@@ -15,8 +15,8 @@ img2 = img2[ : , : , ::-1]
 img1_matrix = np.array(img1)
 img2_matrix = np.array(img2)
 
-img_sum = np.add(img1_matrix, img2_matrix)
-cv.imwrite('./img/img_sum.jpeg', img_sum)
+subtract = np.subtract(img1_matrix, img2_matrix)
+cv.imwrite('./img/img_subtract.jpeg', subtract)
 
 #grid to show multiple images
 plt.subplot(2,2,1)
@@ -27,6 +27,6 @@ plt.subplot(2,2,2)
 plt.imshow(img2,'gray'), plt.title('Image 2'), plt.subplots_adjust(wspace=1)
 
 plt.subplot(2,2,(3,4))
-plt.imshow(img_sum,'gray'), plt.title('Sum')
+plt.imshow(subtract,'gray'), plt.title('Sum')
 
 plt.show()
